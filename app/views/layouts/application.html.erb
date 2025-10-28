@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>taskflow: social work tracking</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <% if Rails.env.development? %>
+    <script type="module">
+      import RefreshRuntime from 'http://localhost:3036/vite-dev/@react-refresh'
+      RefreshRuntime.injectIntoGlobalHook(window)
+      window.$RefreshReg$ = () => {}
+      window.$RefreshSig$ = () => (type) => type
+      window.__vite_plugin_react_preamble_installed__ = true
+    </script>
+  <% end %>
+
+  <%= vite_client_tag %>
+  <%= vite_javascript_tag 'application.jsx' %>
+</head>
+
+<body>
+  <%= yield %>
+</body>
+</html>
